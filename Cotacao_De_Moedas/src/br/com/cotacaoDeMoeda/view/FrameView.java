@@ -11,6 +11,8 @@ import javax.swing.border.EmptyBorder;
 import br.com.cotacaoDeMoeda.model.Coin;
 
 import javax.swing.JComboBox;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
 
 public class FrameView extends JFrame {
 
@@ -57,12 +59,18 @@ public class FrameView extends JFrame {
 		lblNewLabel_2.setBounds(192, 87, 203, 25);
 		contentPane.add(lblNewLabel_2);
 		
-		JComboBox<Coin> comboBox = new JComboBox(Coin.values());
-		comboBox.setBounds(192, 45, 203, 32);
-		contentPane.add(comboBox);
+		JComboBox<Coin> comboBoxResquestCoin = new JComboBox(Coin.values());
+		comboBoxResquestCoin.setBounds(285, 45, 110, 32);
+		contentPane.add(comboBoxResquestCoin);
 		
-		JComboBox comboBox_1 = new JComboBox(Coin.values());
-		comboBox_1.setBounds(192, 122, 203, 32);
-		contentPane.add(comboBox_1);
+		JComboBox comboBoxResponseCoin = new JComboBox(Coin.values());
+		comboBoxResponseCoin.setBounds(192, 122, 203, 32);
+		contentPane.add(comboBoxResponseCoin);
+		
+		JSpinner spinner = new JSpinner();
+		spinner.setToolTipText("");
+		spinner.setModel(new SpinnerNumberModel(Float.valueOf(0), Float.valueOf(0), null, Float.valueOf(1)));
+		spinner.setBounds(192, 45, 87, 32);
+		contentPane.add(spinner);
 	}
 }
