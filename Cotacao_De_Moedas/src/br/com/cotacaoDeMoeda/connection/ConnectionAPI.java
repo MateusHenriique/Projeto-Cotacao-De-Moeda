@@ -1,3 +1,4 @@
+package br.com.cotacaoDeMoeda.connection;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -8,9 +9,11 @@ public class ConnectionAPI {
 
 	private String address = "https://economia.awesomeapi.com.br/json/last/";
 
-	public String requestAPI(String requestCoin) {
+	public String requestAPI(String requestCoin, String responseCoin) {
 		HttpClient client = HttpClient.newHttpClient();
-		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(address + requestCoin + "-BRL")).build();
+		HttpRequest request = HttpRequest.newBuilder()
+				.uri(URI.create(address + requestCoin + "-" + responseCoin))
+				.build();
 
 		HttpResponse<String> response = null;
 
