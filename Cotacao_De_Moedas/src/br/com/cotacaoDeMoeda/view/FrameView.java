@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 import br.com.cotacaoDeMoeda.model.Coin;
 
+import javax.swing.ComboBoxEditor;
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
@@ -47,10 +48,6 @@ public class FrameView extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(192, 191, 203, 44);
-		contentPane.add(lblNewLabel);
-		
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setBounds(192, 10, 203, 25);
 		contentPane.add(lblNewLabel_1);
@@ -72,5 +69,10 @@ public class FrameView extends JFrame {
 		spinner.setModel(new SpinnerNumberModel(Float.valueOf(0), Float.valueOf(0), null, Float.valueOf(1)));
 		spinner.setBounds(192, 45, 87, 32);
 		contentPane.add(spinner);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(192, 189, 203, 44);
+		contentPane.add(lblNewLabel);
+		
 	}
 }
