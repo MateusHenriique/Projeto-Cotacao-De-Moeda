@@ -14,6 +14,8 @@ import javax.swing.ComboBoxEditor;
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
 
 public class FrameView extends JFrame {
 
@@ -48,20 +50,20 @@ public class FrameView extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(192, 10, 203, 25);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblOriginCoin = new JLabel("Moeda de Origem:");
+		lblOriginCoin.setBounds(192, 21, 203, 25);
+		contentPane.add(lblOriginCoin);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(192, 87, 203, 25);
-		contentPane.add(lblNewLabel_2);
+		JLabel lblResposeCoin = new JLabel("Cotação para:");
+		lblResposeCoin.setBounds(192, 97, 203, 25);
+		contentPane.add(lblResposeCoin);
 		
 		JComboBox<Coin> comboBoxResquestCoin = new JComboBox(Coin.values());
-		comboBoxResquestCoin.setBounds(285, 45, 110, 32);
+		comboBoxResquestCoin.setBounds(289, 45, 110, 32);
 		contentPane.add(comboBoxResquestCoin);
 		
 		JComboBox comboBoxResponseCoin = new JComboBox(Coin.values());
-		comboBoxResponseCoin.setBounds(192, 122, 203, 32);
+		comboBoxResponseCoin.setBounds(192, 122, 205, 32);
 		contentPane.add(comboBoxResponseCoin);
 		
 		JSpinner spinner = new JSpinner();
@@ -70,9 +72,14 @@ public class FrameView extends JFrame {
 		spinner.setBounds(192, 45, 87, 32);
 		contentPane.add(spinner);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(192, 189, 203, 44);
-		contentPane.add(lblNewLabel);
+		JLabel lblResult = new JLabel("");
+		lblResult.setHorizontalAlignment(SwingConstants.CENTER);
+		lblResult.setBounds(192, 209, 203, 44);
+		contentPane.add(lblResult);
+		
+		JButton btnConfirm = new JButton("Confirmar");
+		btnConfirm.setBounds(246, 178, 85, 21);
+		contentPane.add(btnConfirm);
 		
 	}
 }
