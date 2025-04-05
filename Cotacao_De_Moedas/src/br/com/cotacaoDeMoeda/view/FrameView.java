@@ -8,6 +8,7 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import br.com.cotacaoDeMoeda.controller.AppController;
 import br.com.cotacaoDeMoeda.model.Coin;
 
 import javax.swing.ComboBoxEditor;
@@ -16,6 +17,8 @@ import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class FrameView extends JFrame {
 
@@ -51,11 +54,11 @@ public class FrameView extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblOriginCoin = new JLabel("Moeda de Origem:");
-		lblOriginCoin.setBounds(192, 21, 203, 25);
+		lblOriginCoin.setBounds(192, 10, 203, 25);
 		contentPane.add(lblOriginCoin);
 		
 		JLabel lblResposeCoin = new JLabel("Cotação para:");
-		lblResposeCoin.setBounds(192, 97, 203, 25);
+		lblResposeCoin.setBounds(192, 87, 203, 25);
 		contentPane.add(lblResposeCoin);
 		
 		JComboBox<Coin> comboBoxResquestCoin = new JComboBox(Coin.values());
@@ -78,6 +81,11 @@ public class FrameView extends JFrame {
 		contentPane.add(lblResult);
 		
 		JButton btnConfirm = new JButton("Confirmar");
+		btnConfirm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AppController.cotationAction("BRL", "EUR");
+			}
+		});
 		btnConfirm.setBounds(246, 178, 85, 21);
 		contentPane.add(btnConfirm);
 		

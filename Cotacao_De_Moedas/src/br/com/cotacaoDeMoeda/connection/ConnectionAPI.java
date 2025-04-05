@@ -7,9 +7,9 @@ import java.net.http.HttpResponse;
 
 public class ConnectionAPI {
 
-	private String address = "https://economia.awesomeapi.com.br/json/last/";
+	private static String address = "https://economia.awesomeapi.com.br/json/last/";
 
-	public String requestAPI(String requestCoin, String responseCoin) {
+	public static String requestAPI(String requestCoin, String responseCoin) {
 		HttpClient client = HttpClient.newHttpClient();
 		HttpRequest request = HttpRequest.newBuilder()
 				.uri(URI.create(address + requestCoin + "-" + responseCoin))
